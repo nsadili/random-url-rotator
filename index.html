@@ -6,29 +6,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Random URL Rotator</title>
     <style>
-        /* Make everything fullscreen */
         html,
         body {
             margin: 0;
             padding: 0;
-            height: 100%;
-            width: 100%;
-            overflow: hidden;
             font-family: Arial, sans-serif;
-        }
-
-        /* Iframe takes full screen */
-        #formFrame {
-            width: 100%;
-            height: 100%;
-            border: none;
         }
     </style>
 </head>
 
 <body>
-
-    <iframe id="formFrame"></iframe>
 
     <script>
         // Add your Google Form links here
@@ -45,10 +32,10 @@
             return formLinks[index];
         }
 
-        // Load random form on page load
+        // Redirect to random form on page load
         window.onload = function () {
             const randomForm = getRandomForm();
-            document.getElementById("formFrame").src = randomForm;
+            window.location.href = randomForm;
         };
     </script>
 
