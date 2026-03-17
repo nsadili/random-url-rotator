@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Random URL Rotator</title>
+    <style>
+        /* Make everything fullscreen */
+        html,
+        body {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            width: 100%;
+            overflow: hidden;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Iframe takes full screen */
+        #formFrame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <iframe id="formFrame"></iframe>
+
+    <script>
+        // Add your Google Form links here
+        const formLinks = [
+            "https://forms.gle/6SzgYsU7aTzegLoZ9",
+            "https://forms.gle/g2yZ2QSmrhnRjxHN6",
+            "https://forms.gle/N7Efi8h4tb1FRUus5",
+            "https://forms.gle/HV4Usj5M71qR2Fa58"
+        ];
+
+        // Pick a random link
+        function getRandomForm() {
+            const index = Math.floor(Math.random() * formLinks.length);
+            return formLinks[index];
+        }
+
+        // Load random form on page load
+        window.onload = function () {
+            const randomForm = getRandomForm();
+            document.getElementById("formFrame").src = randomForm;
+        };
+    </script>
+
+</body>
+
+</html>
